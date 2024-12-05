@@ -1,0 +1,120 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" type="x-icon" href="{% static 'images/icon.png' %}">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Tracker</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <header>
+        <h1 class="logo">
+            <img src="{% static 'images/logo.png' %}" alt="Logo Icon">
+        </h1>
+        <nav class="navigation">
+            <a  id="homeButton">Home</a>
+            <a  id="aboutButton">About</a>
+            <a  id="contactButton">Contact</a>
+        
+            <button class="btnLogin-popup">Login</button>
+            
+        </nav>
+    </header>
+
+    <!-- If the user is not logged in, show the login and register forms -->
+    
+        <div class="wrapper">
+
+            <div class="form-box login">
+                <h2>Login</h2>
+                <form method="post" action="{% url 'program' %}">
+                    {% csrf_token %}
+                    <div class="input-box">
+                        <span class="icon"><ion-icon name="person-circle-outline"></ion-icon></span>
+                        <input type="text" name="username" placeholder="Username" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                        <input type="password" name="password" placeholder="Password" required>
+                    </div>
+                    <div class="forgot">
+                        <a href="#">Forgot password?</a>
+                    </div>
+                    <button type="submit" class="btn">Login</button>
+                    <div class="login-register">
+                        <p>Don't have an account? <a href=# class="register-link">Create New Account</a></p>
+                    </div>
+                </form>
+            </div>
+            <div class="form-box register">
+                <h2>Sign Up</h2>
+                <form method="post" action="#">
+                    {% csrf_token %}
+                    <div class="input-box">
+                        <span class="icon"><ion-icon name="person-circle-outline"></ion-icon></span>
+                        <input type="text" name="username" placeholder="Username" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                        <input type="password" name="password1" placeholder="Password" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                        <input type="password" name="password2" placeholder="Re-enter Password" required>
+                    </div>
+                    <button type="submit" class="btn">Register</button>
+                    <div class="login-register">
+                        <p>Already have an account? <a href="#" class="login-link">Login</a></p>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+
+    <!-- If the user is logged in, show the welcome and main content -->
+    <div id = "home" class = "home-section">
+        <h1>
+            Welcome to Lock-in 
+        </h1>
+        <p>
+            Control your calendar <br> Always be on time with dues 
+        <p>
+    </div>
+        <!---About section-->
+    <div id = "about" class = "about-section">
+        <h1>
+            About us
+        </h1>
+        <p>
+            Hey there! We’re Nhat Thanh Le and Laurel Adria Paul, two aspirational Computer Science students figuring things out as we go. Study Tracker is our first-ever project, and we’re super excited to share it with you! <br> <br>
+            We wanted to create something that makes keeping track of your studies easier and less stressful.       
+        </p>
+        <div class = "image-container">
+            <img src = "../static/images/laurel.jpg" >
+               
+            <img src = "../static/images/nhat.jpg">
+        </div>
+        
+
+    </div>
+
+        <!-- Contact section -->
+    <div id = "contact" class = "contact-section">
+        <h1>
+            Contact
+        </h1>
+        <p>
+            We value your feedback! If you have any suggestions or ideas to improve our website, please let us know below <br><br>
+            Nhat Thanh Le: 2862101@vikes.csuohio.edu<br> <br>
+            Laurel Andria Paul: 2863406@vikes.csuohio.edu
+        </p>
+        
+    </div>
+    <script src="{% static 'script.js' %}"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

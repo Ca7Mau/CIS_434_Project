@@ -1,0 +1,175 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Tracker Dashboard</title>
+    <link rel="stylesheet" href="{% static 'style2.css' %}">
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <h2>Study Tracker</h2>
+            <ul>
+                <!-- Use buttons with clear target IDs -->
+                
+                <li>
+                    <button class="nav-button" data-target="profile"><i class='bx bx-user-pin' ></i>Profile</button></li>
+                <li>
+                    
+                    <button class="nav-button" data-target="todo-list"><i class='bx bx-notepad'></i>Goals</button></li>
+                <li>
+                    <button class="nav-button" data-target="tasks"><i class='bx bx-task' ></i>Tasks</button></li>
+                <li>
+                    
+                    <button class="nav-button" data-target="calendar"><i class='bx bx-calendar' ></i>Calendar</button></li>
+                <li>
+                    
+                    <button class="nav-button" data-target="study-timer"><i class='bx bx-timer' ></i>Study Timer</button></li>
+                <li>
+                    
+                    <button class="nav-button" data-target="summary"><i class='bx bx-bar-chart' ></i>Study Progress</button></li>
+            </ul>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Profile Section -->
+            <section id="profile" class="active">
+                <h3>Profile</h3>
+                <div class="profile-info">
+                    <!-- <p>Name: John Doe</p>
+                    <p>Email: johndoe@example.com</p>
+                    <p>Date of Birth: 2000-01-01</p> -->
+                </div>
+            </section>
+
+            <!-- Todo List Section -->
+            <section id="todo-list">
+                <h3>Goals</h3>
+                <div class="todo-container">
+                    <input type="text" id="todo-name" placeholder="Task Name">
+                    <input type="datetime-local" id="todo-time">
+                    <textarea id="todo-description" placeholder="Task Description"></textarea>
+                    <button id="add-todo">Add Task</button>
+                </div>
+
+                <ul id = "todo-list">
+
+                </ul>
+            </section>
+
+            <!-- Task Section -->
+            <section id="tasks">
+                <h3>Tasks</h3>
+                <div id="task-container">
+                    <div class="task-form">
+                        <input type="text" id="task-name" placeholder="Task Name">
+                        <input type="datetime-local" id="task-datetime">
+                        <textarea id="task-description" placeholder="Task Description"></textarea>
+                        <button id="add-task">Add Task</button>
+                    </div>
+                    
+                    <div id="task-list">
+                        <!-- Tasks will be listed here -->
+                    </div>
+                    
+                        <!-- Task Template -->
+                    <template id="task-template">
+                        <div class="task-item">
+                            <h4 class="task-name">Task Name</h4>
+                            <p><strong>Datetime:</strong> <span class="task-datetime">MM/DD/YYYY, HH:MM AM/PM</span></p>
+                            <p class="task-description">Task Description</p>
+                            <div class="task-actions">
+                                <button class="edit-task">
+                                    <i class='bx bx-pencil'></i>
+                                </button>
+                                <button class="remove-task">
+                                    <i class='bx bx-trash'></i>
+                                </button>
+                            </div>
+                        </div>
+                    </template>
+                    
+                </div>
+            </section>
+
+            <!-- Calendar Section -->
+            <section id="calendar">
+                <h3>Calendar</h3>
+
+                <div class="calendar-header">
+                    <button id="prev-month">Prev</button>
+                    <h3 id="month-title">December 2024</h3>
+                    <button id="next-month">Next</button>
+                </div>
+
+                <div id="back-to-month" class="hidden">
+                    <i class='bx bx-arrow-back'></i>
+                </div>    
+                <div class="weekdays">
+                    <div>Sun</div>
+                    <div>Mon</div>
+                    <div>Tue</div>
+                    <div>Wed</div>
+                    <div>Thu</div>
+                    <div>Fri</div>
+                    <div>Sat</div>
+                    
+                </div>
+            
+                <div id="calendar-grid" class="calendar-grid">
+                    <!-- Calendar will be generated dynamically -->
+                </div>
+            </section>
+
+            <!-- Study Timer Section -->
+            <section id="study-timer">
+                <h3>Study Timer</h3>
+                <div class="timer-container" >
+                    <!-- Add timer functionality later -->
+                    <div id="time">
+                        <span class="digit" id="hr">00</span>
+
+                        <span class="txt">Hr</span>
+
+                        <span class="digit" id="min">00</span>
+
+                        <span class="txt">Min</span>
+
+                        <span class="digit" id="sec">00</span>
+
+                        <span class="txt">Sec</span>
+
+                        <span class="digit" id="count">00</span>
+                    </div>
+                    <div id="buttons">
+                        <button class="btn" id="start">
+                            Start</button>
+                        <button class="btn" id="stop">
+                            Stop</button>
+                        <button class="btn" id="reset">
+                            Reset</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Summary Section -->
+            <section id="summary">
+                <h3>Study Progress</h3>
+                <div class="summary-content">
+                    <!-- Add summary details later -->
+                    <p>Content to be updated...</p>
+                </div>
+            </section>
+        </div>
+    </div>
+    <script src="{% static 'script2.js' %}"></script>
+</body>
+</html>
