@@ -1,0 +1,48 @@
+User Manual 
+1. Introduction
+Lock-In helps users manage their academic activities through a user-friendly interface. The system has two main parts:
+Index Page: The landing page for user registration, login, and access to general information (About Us and Contact).
+Dashboard: A detailed area where users manage their goals, tasks, and study sessions.
+2. Home Page
+Login and Registration forms.
+About Us and Contact sections.
+Navigation Bar to move between sections.
+Key Features
+Login:
+Accessible via the "Login" button.
+Input your username and password.
+Click "Login" to access the dashboard.
+Register:
+Accessible via the "Register" button.
+Fill out the username, password, and confirm password fields.
+Click "Register" to create an account.
+Navigation Links:
+Home: Returns to the homepage.
+About Us: Provides details about the creators.
+Contact: Displays contact information.
+Authenticated Users:
+After logging in, you will see a welcome message and gain access to the dashboard.
+3. Dashboard
+Features
+Sidebar Navigation:
+Profile: Displays user information (e.g., name, email, date of birth).
+Goals: Add and view your academic goals.
+Tasks: Manage specific tasks related to your goals.
+Calendar: View and organize events.
+Study Timer: Track study sessions with a timer.
+Summary: View summaries of your activities.
+
+Goals Section:
+Input a task name, set a deadline, and add descriptions.
+Save tasks to view them in the list.
+Tasks Section:
+Add tasks related to your goals.
+Manage tasks using "Edit" and "Delete" options.
+Calendar Section:
+Navigate through months using the Prev and Next buttons.
+View your schedule and important dates dynamically.
+Study Timer Section:
+A built-in timer to monitor study durations.
+Buttons for Start, Stop, and Reset.
+Summary Section:
+Provides an overview of all your activities.

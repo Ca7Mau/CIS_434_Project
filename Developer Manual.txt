@@ -1,0 +1,90 @@
+1. Project Overview
+"LockIn" is a web application designed to help users track their study goals, tasks, and sessions. It allows users to register, log in, create and manage study goals and tasks, track their study progress through sessions, and view them on a calendar.
+2. Project Structure
+The project follows a standard Django directory structure, with specific folders for apps, static files, templates, and migrations.
+3. Setup Instructions
+Prerequisites
+Python 3.x
+Django 3.x or higher
+PostgreSQL (optional) or default SQLite
+Pip (Python package installer)
+Installation Steps
+Clone the repository:
+git clone https://github.com/Ca7Mau/lockin.git
+cd LockIn
+cd Lock_in
+Create a virtual environment:
+python3 -m venv venv
+source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+Install dependencies:
+pip install -r 
+Configure the database:
+Modify the DATABASES setting in LockIn/settings.py for PostgreSQL or keep the default SQLite configuration.
+Run migrations:
+python manage.py migrate
+Create a superuser (for admin access):
+python manage.py createsuperuser
+Run the development server:
+python manage.py runserver
+Visit the website at http://127.0.0.1:8000.
+
+4. Core Features and Functionalities
+User Registration and Login
+Users can create an account or log in using the built-in Django authentication system.
+Views: register (for account creation), login (for login).
+Forms: UserCreationForm, AuthenticationForm.
+Dashboard
+Once logged in, users are redirected to their dashboard.
+They can add, edit, or delete goals and tasks.
+View the calendar with tasks/goals displayed on it.
+View logged study sessions and track their progress.
+Goal and Task Management
+Goals can be created and linked with tasks.
+Tasks can be marked as completed, edited, or deleted.
+The model Goal stores the goals, while the Task model manages the individual tasks associated with each goal.
+Study Session Logging
+Users can start a study session timer and log time spent on each session.
+Data is saved in the StudySession model.
+Calendar View
+Display tasks and goals on the calendar.
+Users can navigate between months and view tasks/goals for specific dates.
+5. Code Breakdown
+Models
+The models represent the database structure of the application:
+User: Managed by Django's built-in User model.
+Goal: Contains a title, description, and user reference.
+Task: Contains task details (title, description, deadline, completion status) and a foreign key to a Goal.
+StudySession: Represents individual study sessions, storing the start and end time.
+Views
+Views handle the logic behind rendering templates and processing forms:
+Login/Registration Views: Handle user authentication and registration processes.
+Dashboard View: Displays the dashboard, fetching goals, tasks, and sessions.
+Task Management Views: Handle adding, editing, and deleting tasks.
+Study Session Views: Start and stop timers, save session data.
+Forms
+Forms are used to handle user inputs:
+GoalForm: Form for adding or editing goals.
+TaskForm: Form for adding or editing tasks.
+StudySessionForm: Form for logging study sessions.
+URLs
+All views are mapped to URLs in the accounts/urls.py file.
+6. Testing and Debugging
+Unit Tests
+Located in accounts/tests.py.
+Tests for login, registration, task CRUD operations, and study session logging.
+Debugging
+Use Django's built-in runserver in debug mode for error details.
+Log errors in the console for faster troubleshooting.
+Manual Testing
+Test the basic flows like registration, login, task management, and session logging.
+Check the UI responsiveness and calendar integration.
+7. Front-End Design
+CSS: The static folder contains style.css,script.js for the homepage  and additional files like script2.js,style2.css for dashboard to manage UI interactions.
+HTML Templates: Simple but functional templates for login, dashboard, calendar, and task management.
+JavaScript: Handles interactivity such as the calendar view and task actions.
+
+10. Future Enhancements
+User Notifications: Implement email reminders for tasks or session logs.
+Advanced Analytics: Provide detailed reports on study habits and progress.
+Mobile Optimization: Improve mobile responsiveness for a seamless experience across devices.
+
